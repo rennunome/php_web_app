@@ -1,7 +1,8 @@
 <?php
 session_start();
+require 'db_connection.php';
 //ファイルの読み込み
-require 'header.php';
+require "header.php";
 // require 'user_entity.php';
 //POSTでidとpasswordを取得
 $id = $_POST["id"];
@@ -19,11 +20,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 // ユーザがいない
 if(!$user){
     echo 'ユーザ名かパスワードが正しくありません。';
+    exit();
 }
 
 // パスワードチェック
 if(!password_verify($password, $user["password"])){
     echo 'ユーザ名かパスワードが正しくありません。';
+    exit();
 }
 
 // ログイン
