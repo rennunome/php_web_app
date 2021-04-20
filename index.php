@@ -1,9 +1,8 @@
 <?php
 session_start();
 require 'db_connection.php';
-//ファイルの読み込み
 require "header.php";
-// require 'user_entity.php';
+
 //POSTでidとpasswordを取得
 $id = $_POST["id"];
 $password = $_POST["password"];
