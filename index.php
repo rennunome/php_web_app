@@ -9,10 +9,10 @@ require "header.php";
 <title>Top</title>
 </head>
 <body>
-		<div align="center">
 		<?php 
 		if ($_SESSION["admin_flag"] == 1) { 
 		?>
+		<div align="center">
 		<form action="list.php"  method="post">
 			<input type="submit" value="問題と答えを確認・登録する ＞ ">
 			</form>
@@ -25,9 +25,11 @@ require "header.php";
 			<form action="user_list.php"  method="post">
 			<input type="submit" value="ユーザを追加・編集する＞">
 			</form>
+		</div>
 		<?php
-		} else {
+		} else if ($_SESSION["admin_flag"] == 0){
 		?>
+		<div align="center">
 			<form action="test.php"  method="post">
 			<input type="submit" value="テストをする ＞">
 			</form>
@@ -39,9 +41,9 @@ require "header.php";
 			<form action="userlist.php"  method="post">
 			<input type="submit" value="ユーザを追加・編集する＞">
 			</form>
+		</div>
 		<?php
 		} 
 		?>
-		</div>
 </body>
 </html>
