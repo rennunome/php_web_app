@@ -11,7 +11,7 @@ if(isset($_POST['confirm'])){
     $stmt = $db->prepare($sql);
     $stmt->execute([':question' => $question]);
     
-    $sql = $sql = "select id from questions order by created_at desc limit 1";
+    $sql = "select id from questions order by created_at desc limit 1";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $questions_id = $stmt->fetch(PDO::FETCH_ASSOC);

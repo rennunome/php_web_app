@@ -42,11 +42,11 @@ foreach ($ca_list as $ca_value) {
 }
 ?>
 	<form action="edit.php" method="post">
-		<input type="hidden" name="question_id"
+		<input type="hidden" name="questions_id"
 			value="<?= $ca_value["questions_id"]; ?>" /> <input type="submit" value="編集" />
 	</form>
-	<form action="delete.php" method="post">
-		<input type="hidden" name="question_id"
+	<form action="delete_confirm.php" method="post">
+		<input type="hidden" name="questions_id"
 			value="<?= $ca_value["questions_id"]; ?>" /> <input type="submit" value="削除" />
 	</form>
 <?php
