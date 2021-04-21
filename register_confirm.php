@@ -1,13 +1,8 @@
 <?php
 require "header.php";
 
-$question = $_POST['question'];
-$answer = $_POST['answer'];
-
-// if(isset($_GET['question']))
-//     $question = $_GET['question']; 
-// if(isset($_GET['answer']))
-//     $answer = $_GET['answer'];    
+$question = getParameter('question');
+$answer = getParameter('answer');
 ?>
 	<form action= "register_db.php" method="post">
     <label for="question">問題</label>

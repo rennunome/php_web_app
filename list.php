@@ -33,7 +33,7 @@ foreach ($ca_list as $ca_value) {
         if ($ca_value['questions_id'] == $q_value['id']) {
             ?>
 <label for="answer_id">答え：<?= $ca_value['id'] ?></label>
-	<input type="text" name="answer" id="answer_id"
+	<input type="text" name="answer[]"
 		value="<?= $ca_value["answer"]; ?>" />
 <?php
 }

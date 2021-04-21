@@ -25,6 +25,6 @@ if (strlen($_POST['question']) > 500 || strlen($_POST['answer']) > 200) {
     header('Location: http://localhost/FirstPhp/register.php');
     exit();
 }
-    header('Location: http://localhost/FirstPhp/register_confirm.php?question=$q&answer=$a');
+    header('Location: http://localhost/FirstPhp/register_confirm.php?question='.$question.'&answer='.$answer.'');
     exit();
 ?>
