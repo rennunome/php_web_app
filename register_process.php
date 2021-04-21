@@ -22,10 +22,9 @@ if($result > 0){
 
 //入力値文字数チェック（エラーメッセージ未実装）
 if (strlen($_POST['question']) > 500 || strlen($_POST['answer']) > 200) {
-      header('Location: http://localhost/FirstPhp/register.php');
-    exit();
-} else {
-    header('Location: http://localhost/FirstPhp/register_confirm.php?question={$question}&answer={$answer}');
+    header('Location: http://localhost/FirstPhp/register.php');
     exit();
 }
+    header('Location: http://localhost/FirstPhp/register_confirm.php?question=$q&answer=$a');
+    exit();
 ?>

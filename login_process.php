@@ -19,14 +19,12 @@ if(isset($_POST['login'])){
     // ユーザがいない
     if(!$user){
         header('Location: http://localhost/FirstPhp/login.php');
-        echo 'ユーザ名かパスワードが正しくありません。';
         exit();
     }
     
     // パスワードチェック
     if(!password_verify($password, $user["password"])){
         header('Location: http://localhost/FirstPhp/login.php');
-        echo 'ユーザ名かパスワードが正しくありません。';
         exit();
     }
     

@@ -1,7 +1,7 @@
 <?php
 require "header.php";
 ?>
-<form action="register_process.php" method="post">
+<form action="register_confirm.php" method="post">
 	<label for="question">問題</label> <input type="text" name="question" /><br />
 	<label for="answer">答え：</label> <input type="text" name="answer" /><br /> <input
 		type="submit" value="確認" />
