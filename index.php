@@ -1,39 +1,7 @@
 <?php
 session_start();
-//ファイルの読み込み
-require 'header.php';
-// require 'user_entity.php';
-//POSTでidとpasswordを取得
-$id = $_POST["id"];
-$password = $_POST["password"];
-
-// ハッシュを作る
-$hash = password_hash($password, PASSWORD_BCRYPT);
-
-// ユーザIDでSELECTする
-$sql = 'SELECT * FROM users WHERE id = :id';
-$stmt = $db->prepare($sql);
-$stmt->execute([':id'=>$_POST['id']]);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// ユーザがいない
-if(!$user){
-    echo 'ユーザ名かパスワードが正しくありません。';
-}
-
-// パスワードチェック
-if(!password_verify($password, $user["password"])){
-    echo 'ユーザ名かパスワードが正しくありません。';
-}
-
-// ログイン
-// session_regenerate_id(true);
-$_SESSION['login'] = true;
-
-//セッションにidとpasswordを詰める
-$_SESSION["id"]=$id;
-$_SESSION["password"]=$password;
-$_SESSION["admin_flag"]=$user["admin_flag"];
+require 'db_connection.php';
+require "header.php";
 ?>
 <html lang="ja">
 <head>
@@ -41,10 +9,10 @@ $_SESSION["admin_flag"]=$user["admin_flag"];
 <title>Top</title>
 </head>
 <body>
-		<div align="center">
 		<?php 
 		if ($_SESSION["admin_flag"] == 1) { 
 		?>
+		<div align="center">
 		<form action="list.php"  method="post">
 			<input type="submit" value="問題と答えを確認・登録する ＞ ">
 			</form>
@@ -57,9 +25,11 @@ $_SESSION["admin_flag"]=$user["admin_flag"];
 			<form action="user_list.php"  method="post">
 			<input type="submit" value="ユーザを追加・編集する＞">
 			</form>
+		</div>
 		<?php
-		} else {
+		} else if ($_SESSION["admin_flag"] == 0){
 		?>
+		<div align="center">
 			<form action="test.php"  method="post">
 			<input type="submit" value="テストをする ＞">
 			</form>
@@ -71,9 +41,9 @@ $_SESSION["admin_flag"]=$user["admin_flag"];
 			<form action="userlist.php"  method="post">
 			<input type="submit" value="ユーザを追加・編集する＞">
 			</form>
+		</div>
 		<?php
 		} 
 		?>
-		</div>
 </body>
 </html>
