@@ -41,11 +41,12 @@ function deleteBtn(target) {
 </script>
 <h2>問題・答え新規登録画面</h2>
 <form action="register_process.php" method="post" id="qaForm">
-	<label for="question">問題</label>
+	<label for="question">問題：</label>
 	<input type="text" name="question" /><br />
 	<label for="answer">答え：</label>
 	<div id= "form_area"><br />
-	<input type="text" name="answer[]" id="answer" /><br />
+	<input type="text" name="answers[]" id="answer" /><br />
+	<input type="text" name="answers[]" id="answer" /><br />
 	</div><br />
 	<input type= "button" value= "フォーム追加" onclick="addForm()" /><br />
 	<button type="submit" id="qaButton">確認</button>
