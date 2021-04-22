@@ -9,6 +9,7 @@ require 'db_connection.php';
 <title>Login</title>
 </head>
 <body>
+<h2>ログイン画面</h2>
 <form action="login_process.php" method="post">
 <div class="login">
 <div class="id">

@@ -2,10 +2,15 @@
 require 'db_connection.php';
 
 $question = $_POST['question'];
-$answer = $_POST['answer'];
+$answers = $_POST['answer'];
 
+if (is_countable($answers)) {
+for ($i=0; $i<count($answers); $i++){
+echo $answers[$i];
+}
+}
 //入力値チェック（エラーメッセージ未実装）
-if($question == null || $answer == null){
+if($question == null || $answers == null){
     header('Location: http://localhost/FirstPhp/register.php');
     exit();
 }
@@ -25,6 +30,6 @@ if (strlen($_POST['question']) > 500 || strlen($_POST['answer']) > 200) {
     header('Location: http://localhost/FirstPhp/register.php');
     exit();
 }
-    header('Location: http://localhost/FirstPhp/register_confirm.php?question='.$question.'&answer='.$answer.'');
+    header('Location: http://localhost/FirstPhp/register_confirm.php?question='.$question.'&answers='.$answers[$i].'');
     exit();
 ?>
