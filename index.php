@@ -13,6 +13,7 @@ require "header.php";
 		if ($_SESSION["admin_flag"] == 1) { 
 		?>
 		<div align="center">
+		<h2>メニュー画面</h2>
 		<form action="list.php"  method="post">
 			<input type="submit" value="問題と答えを確認・登録する ＞ ">
 			</form>
@@ -30,6 +31,7 @@ require "header.php";
 		} else if ($_SESSION["admin_flag"] == 0){
 		?>
 		<div align="center">
+			<h2>メニュー画面</h2>
 			<form action="test.php"  method="post">
 			<input type="submit" value="テストをする ＞">
 			</form>

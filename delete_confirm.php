@@ -13,15 +13,15 @@ $stmt = $db->prepare($sql);
 $stmt->execute([':questions_id'=>$question_id]);
 $answer = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
-
+<h2>問題・答え削除確認画面</h2>
 <form action="delete.php" method="POST">
-	<label for="question_id">問題：</label> <input type= "text" name= "question" value ="<?= $question["question"]?>">
+	<label for="question_id">問題：</label> <input type= "text" name= "question" value ="<?= $question["question"]?>" readonly/>
 	 <input type= "hidden" name= "questions_id" value ="<?= $question["id"]?>">
 	 <input type= "hidden" name= "answer_id[]" value ="<?= $answer["id"]?>">
 	 <br>
 	 <?php foreach ($answer as $value) { ?>
 	<label for="answer_id">答え：</label>
-	 <input type= "text" name= "answer[]" value ="<?= $value["answer"]?>">
+	 <input type= "text" name= "answer[]" value ="<?= $value["answer"]?>" readonly/>
 	<input type="submit" value="削除">
 	</form>
 	<?php
