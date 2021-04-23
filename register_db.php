@@ -10,17 +10,16 @@ if(isset($_GET['confirm'])){
     $sql = "INSERT INTO questions (question, created_at) VALUES(:question, current_timestamp())";
     $stmt = $db->prepare($sql);
     $stmt->execute([':question' => $question]);
-    
-    $sql = "select id from questions order by created_at desc limit 1";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $questions_id = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    for($i = 0; $i < count(array($answers)); $i++){
+    $questions_id = $db->lastInsertId();
+   
+    if (is_array($answers)) {
+    for($i = 0; $i < count($answers); $i++){
         $a = $answers[$i];
     $sql = "INSERT INTO correct_answers (answer, questions_id, created_at) VALUES (:answer, :questions_id, current_timestamp())";
     $stmt = $db->prepare($sql);
-    $stmt->execute([':answer' => $a, ':questions_id' => $questions_id["id"]]);
+    $stmt->execute([':answer' => $a, ':questions_id' => $questions_id]);
+    unset($stmt);
+        }
     }
 }
     header('Location: http://localhost/FirstPhp/list.php');

@@ -8,7 +8,7 @@ function addForm() {
   var input_data = document.createElement('input');
   input_data.type = 'text';
   input_data.id = 'answer' + i;
-input_data.name = 'answer';
+input_data.name = 'answers[]';
   var parent = document.getElementById('form_area');
   parent.appendChild(input_data);
 
@@ -45,7 +45,6 @@ function deleteBtn(target) {
 	<input type="text" name="question" /><br />
 	<label for="answer">答え：</label>
 	<div id= "form_area"><br />
-	<input type="text" name="answers[]" id="answer" /><br />
 	<input type="text" name="answers[]" id="answer" /><br />
 	</div><br />
 	<input type= "button" value= "フォーム追加" onclick="addForm()" /><br />
