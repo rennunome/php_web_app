@@ -1,7 +1,7 @@
 <?php
 require "db_connection.php";
 
-$questions_id = $_POST['questions_id'];
+$questions_id = $_GET['questions_id'];
 
 $sql = 'DELETE FROM questions WHERE id = :id';
 $stmt = $db->prepare($sql);
