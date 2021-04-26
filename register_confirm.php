@@ -18,3 +18,8 @@ $answers = $_GET['answers'];
      <?php } ?>
     <input type="submit" name="confirm" value="登録">
     </form>
+<div align="right">
+	<form action="register.php" method="post">
+		<input type="submit" value="戻る" />
+	</form>
+</div>

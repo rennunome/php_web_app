@@ -1,10 +1,15 @@
 <?php
 require 'db_connection.php';
+$users_id = $_GET['users_id'];
 $user_name = $_GET['user_name'];
 $total_qs = $_GET['total_qs'];
 $total_score = $_GET['total_score'];
 $total = $_GET['total'];
 $date = $_GET['date'];
+
+$sql = "INSERT INTO histories (user_id, created_at, point) values (:user_id, current_timestamp(), :point)";
+$stmt = $db->prepare($sql);
+$stmt->execute([':user_id' => $users_id, ':point' => $total_score]);
 ?>
 <div align="right">
 		<form action="login.php"  method="post">

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'db_connection.php';
-require "header.php";
 ?>
 <html lang="ja">
 <head>
@@ -9,6 +8,11 @@ require "header.php";
 <title>Top</title>
 </head>
 <body>
+<div align="right">
+		<form action="login.php"  method="post">
+			<input type="submit" value="logout">
+		</form>
+		</div>
 		<?php 
 		if ($_SESSION["admin_flag"] == 1) { 
 		?>
