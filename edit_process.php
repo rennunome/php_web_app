@@ -32,7 +32,7 @@ if (mb_strlen($question) > 500) {
     exit();
 } 
 for($i = 0; $i < count($answers); $i++){
-if (mb_strlen($answers) > 200){
+if (mb_strlen($answers[$i]) > 200){
     header('Location: http://localhost/FirstPhp/edit.php');
     exit();
  }
