@@ -67,3 +67,8 @@ function deleteBtn(target) {
 			<input type= "button" value= "フォーム追加" onclick="addForm()" /><br />
 			<button type="submit" id="qaButton">確認</button>
 </form>
+<div align="right">
+	<form action="list.php" method="post">
+		<input type="submit" value="戻る" />
+	</form>
+</div>

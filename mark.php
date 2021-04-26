@@ -32,8 +32,9 @@ $_SESSION["name"]=$user_name;
 $total = $score++;
 $total_qs = count($questions_id);
 $total_score = round(100 * $total /$total_qs);
+date_default_timezone_set('Asia/Tokyo');
 $date = date("Y/m/d H:i");
 
-header('Location: http://localhost/FirstPhp/result.php?total='.$total.'&user_name='.$user_name.'&total_qs='.$total_qs.'&total_score='.$total_score.'&date='.$date.'');
+header('Location: http://localhost/FirstPhp/result.php?total='.$total.'&user_name='.$user_name.'&total_qs='.$total_qs.'&total_score='.$total_score.'&date='.$date.'&users_id='.$users_id.'');
 exit();
 ?>
