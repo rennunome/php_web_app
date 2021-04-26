@@ -7,12 +7,12 @@ $total = $_GET['total'];
 $date = $_GET['date'];
 ?>
 <div align="right">
-<form action="" method="">
-<input type="submit" value="Logout">
-</form>
-<form action="" method="POST">
-<input type="submit" value="Top">
-</form>
+		<form action="login.php"  method="post">
+			<input type="submit" value="logout">
+		</form>
+		<form action="index.php"  method="post">
+			<input type="submit" value="top">
+		</form>
 </div>
 <h1>テストの結果</h1>
 <p><?php

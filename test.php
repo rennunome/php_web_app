@@ -13,7 +13,7 @@ $q_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php for ($i = 0; $i < count($q_list); $i++) { ?>
 <label for="question_id">問題：</label>
 <input type="text" name="question" value="<?=$q_list[$i]['question']?>" readonly /><br />
-    <input type="hidden" name="questions_id[]" value="<?=$q_list[$i]['id']?>>" />
+    <input type="hidden" name="questions_id[]" value="<?=$q_list[$i]['id']?>" />
     <br>
         <label for="answer_id">回答：</label>
         <input type="text" name="test_answers[]" /><br />
