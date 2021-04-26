@@ -18,8 +18,8 @@ foreach ($h_list as $value) {
 <th>得点</th>
 <th>採点時間</th>
 <tr>
-<td><?php echo $_SESSION['name'], 'さん';?></td>
-<td><?php echo $value['point'], '点';?></td>
+<td><?php echo $_SESSION['name']. 'さん';?></td>
+<td><?php echo $value['point']. '点';?></td>
 <td><?php echo $value['created_at'];?></td>
 </tr>
 </table>
