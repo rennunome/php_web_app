@@ -4,10 +4,6 @@ $user_name = $_GET['user_name'];
 $password = $_GET['password'];
 $password_confirm = $_GET['password_confirm'];
 $admin = $_GET['admin'];
-
-if($admin != 'on'){
-    $admin == 'off';
-}
 ?>
 <form action="user_db.php" method="GET">
 	<div align="center">
@@ -20,7 +16,7 @@ if($admin != 'on'){
 			<input type="text" name="passwordconfirm" id="passwordconfirm" value="<?= $password_confirm ?>" readonly><br>
 			<label for="admin">管理者：</label>
 			<input type="text" name="admin" value="<?= $admin != "on" ? 'なし' : 'あり' ?>" readonly>
-			<input type="text" name="admin" value="<?= $admin ?>"><br>
+			<input type="hidden" name="admin" value="<?= $admin ?>"><br>
 	</div>
 	<div align="right">
 		<input type="submit" value="登録">

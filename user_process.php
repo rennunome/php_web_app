@@ -4,7 +4,6 @@ $user_name = $_GET['user_name'];
 $password = $_GET['password'];
 $password_confirm = $_GET['password_confirm'];
 $admin = $_GET['admin'];
-echo $admin;
 //入力値に対してのバリデーション
 //ユーザー名のみが半角英数字入力ではない場合
 if ($user_name != null && !preg_match("/^[a-zA-Z0-9]+$/", $user_name)) {

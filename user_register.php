@@ -17,7 +17,8 @@ $error_pw = $_GET['error_pw'];
 		<label for="password_confirm">PW確認：</label>
 		 <input type="text" name="password_confirm" id="passwordconfirm" placeholder="半角英数字のみ8文字以上"><br>
 		  <label for="admin">管理者：</label>
-		<input type="checkbox" name="admin"><br>
+		<input type="checkbox" name="admin">
+		<br>
 	<div align="right">
 			<input type="submit" value="確認">
 	</div>
