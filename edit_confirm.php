@@ -20,9 +20,9 @@ $answer_ids = $_GET['answer_ids'];
 			<input type="submit" name="update" value="更新">
 </form>
 <div align="right">
-	<form action="edit.php" method="post">
+	<form action="edit.php" method="GET">
 		<input type="submit" value="戻る" />
 		<input type="hidden" name="questions_id"
-			value="<?=$answer_ids[$i]?>" />
+			value="<?=$questions_id?>" />
 	</form>
 </div>
