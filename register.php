@@ -1,5 +1,6 @@
 <?php
 require "header.php";
+$error_msg = $_GET['error_msg'];
 ?>
 <!--フォームの追加ボタン-->
 <script type="text/javascript">
@@ -41,6 +42,7 @@ function deleteBtn(target) {
 </script>
 <h2>問題・答え新規登録画面</h2>
 <form action="register_process.php" method="post" id="qaForm">
+<?php $error_msg ?>
 	<label for="question">問題：</label>
 	<input type="text" name="question" /><br />
 	<label for="answer">答え：</label>

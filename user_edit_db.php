@@ -7,7 +7,7 @@ $admin = $_GET['admin'];
 // 登録フラグを設定
 // $register_check = $_SESSION["OK"];
 
-if($admin == 0) {
+if($admin == null) {
     $sql = "UPDATE users SET password = :password, admin_flag = 0, updated_at = current_timestamp() WHERE id = :id";
     $stmt = $db->prepare($sql);
     $stmt->execute([':id' => $user_id, ':password' => password_hash($password, PASSWORD_DEFAULT)]);

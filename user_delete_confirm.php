@@ -1,7 +1,7 @@
 <?php
 require "header.php";
 $user_id = $_POST['user_id'];
-$sql = 'SELECT * FROM users where id = :id';
+$sql = 'SELECT * FROM users where id = :id AND deleteflag = 0';
 $stmt = $db->prepare($sql);
 $stmt->execute([':id' => $user_id]);
 $u_list = $stmt->fetchAll(PDO::FETCH_ASSOC);

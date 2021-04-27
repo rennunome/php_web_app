@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-$sql = 'SELECT * FROM users';
+$sql = 'SELECT * FROM users WHERE deleteflag = 0';
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $u_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ $u_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		 <input type="text" name="admin" value="<?= $value['admin_flag']  == 1 ? '管理者' : '一般'?>">
 		  <input type="text" name="user_name" value="<?= $value['name'] ?>">
 		  </div>
-	<form action="user_edit.php" method="POST">
+	<form action="user_edit.php" method="GET">
 		<input type ="submit" value="編集" >
 		<input type="hidden" name="user_id" value="<?= $value['id'] ?>">
 		<input type="hidden" name="user_name" value="<?= $value['name'] ?>">

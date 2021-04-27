@@ -58,6 +58,7 @@ function deleteBtn(target) {
 	<?php 
      for ($i=0; $i<count($answer); $i++){
          ?>
+		<br>
 		<label for="answer">答え：</label> 
 		<div id= "form_area">
 		<input type="text" name="answers[]" value="<?=$answer[$i]['answer']?>" />
