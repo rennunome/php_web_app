@@ -17,22 +17,19 @@ $u_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<div>
 		<label for="user_id">ID　　　　　　　　 </label> <label for="auth">権限 　　　　　　　</label>
 		 <label for="user_name">ユーザー名</label><br>
-		 <input type="text" name="user_id" value="<?= $value['id']; ?>">
+		 <input type="text" name="user_id" value="<?= $value['id'] ?>">
 		 <input type="text" name="admin" value="<?= $value['admin_flag']  == 1 ? '管理者' : '一般'?>">
-		  <input type="text" name="user_name" value="<?= $value['name']; ?>">
+		  <input type="text" name="user_name" value="<?= $value['name'] ?>">
 		  </div>
-	<form action="user_edit" method="POST">
+	<form action="user_edit.php" method="POST">
 		<input type ="submit" value="編集" >
-		<input type="hidden" name="user_id" value="">
-		<input type="hidden" name="user_name" value="">
-		<input type="hidden" name="admin_flag" value="">
-		<input type="hidden" name="password" value="">
+		<input type="hidden" name="user_id" value="<?= $value['id'] ?>">
+		<input type="hidden" name="user_name" value="<?= $value['name'] ?>">
+		<input type="hidden" name="admin" value="<?= $value['admin_flag'] ?>">
+		<input type="hidden" name="password" value="<?= $value['password'] ?>">
 	</form>
-	<form action="user_delete_confirm}" method="POST">
+	<form action="user_delete_confirm.php" method="POST">
 		<input type="submit" value="削除"> 
-		<input type="hidden" name="user_id" value="">
-		<input type="hidden" name="user_name" value="">
-		<input type="hidden" name="admin_flag" value="">
-		<input type="hidden" name="password" value="">
+		<input type="hidden" name="user_id" value="<?= $value['id']; ?>">
+		</form>
 		<?php }?>
-	</form>
